@@ -16,6 +16,11 @@ class Row extends React.Component {
     );
   }
   render () {
+    return(
+      <tr className="row">
+        {this.buildCells()}
+      </tr>
+    );
   }
 }
 
