@@ -37,7 +37,11 @@ function blurCell () {
 }
 
 function removeRow (ev) {
-  
+  ev.preventDefault();
+  if (this.state.table.length > 1)
+    this.setState({
+      table: this.state.table.slice(0, this.state.table.length - 1)
+    });
 }
 
 function removeColumn (ev) {
