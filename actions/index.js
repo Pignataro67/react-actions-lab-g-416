@@ -8,6 +8,10 @@ function addColumn (ev) {
 }
 
 function addRow (ev) {
+  ev.preventDefault();
+  this.setState({
+    table: [...this.state.table, this.state.table[0].map(el => '')]
+  });
 }
 
 function changeCell (rowIndex, columnIndex, ev) {
