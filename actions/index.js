@@ -15,6 +15,13 @@ function addRow (ev) {
 }
 
 function changeCell (rowIndex, columnIndex, ev) {
+  this.setState({
+    table: this.state.table.map(
+        (row, cRowIndex) => row.map(
+          (el, cColumnIndex) =>
+            (cRowIndex !== rowIndex || cColumnIndex !== columnIndex) ? el: ev.target.value
+      ))
+  });
 }
 
 function focusCell (rowIndex, columnIndex) {
