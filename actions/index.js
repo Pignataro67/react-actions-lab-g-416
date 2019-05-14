@@ -45,6 +45,11 @@ function removeRow (ev) {
 }
 
 function removeColumn (ev) {
+  ev.preventDefault();
+  if (this.state.table[0].length > 1)
+    this.setState({
+      table: this.state.table.map(row => row.slice(0, row.length - 1))
+    });
 }
 
 module.exports = {
