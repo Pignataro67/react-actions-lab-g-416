@@ -1,6 +1,10 @@
 'use strict';
 
 function addColumn (ev) {
+  ev.preventDefault();
+  this.setState({
+    table: this.state.table.map(row => [...row, ''])
+  });
 }
 
 function addRow (ev) {
